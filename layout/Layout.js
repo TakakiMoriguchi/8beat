@@ -7,7 +7,7 @@ import {
   Box
 } from '@chakra-ui/react'
 
-const title = '8beat - バンドマン御用達のサポートサイト'
+const title = '8beat - バンドマン御用達のサポートメディア'
 const description = 'バンド活動におけるロゴ・CDジャケット・グッズ・HPに至るまでトータルでサポート致します。'
 
 function Layout() {
@@ -22,6 +22,12 @@ function Layout() {
           <Box className="jumbotron">
             <h1>8&nbsp;beat</h1>
             <h2>バンドマン御用達のサポートメディア</h2>
+            <p>
+              We are Glowing up now
+              stage1: support Graphic & Web site
+              stage2: create indies community
+              stage3: Live Streaming Service
+            </p>
           </Box>
         </header>
       </Container>
