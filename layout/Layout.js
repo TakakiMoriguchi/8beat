@@ -1,6 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 
+// Components
+import ParentHeader from "/components/ParentHeader"
+import ChildHeader from "/components/ChildHeader"
+
 // Chakra
 import {
   Container,
@@ -10,28 +14,48 @@ import {
 const title = '8beat - バンドマン御用達のサポートメディア'
 const description = 'バンド活動におけるロゴ・CDジャケット・グッズ・HPに至るまでトータルでサポート致します。'
 
-function Layout() {
+function Layout({ children, parent }) {
   return (
-    <div>
+    <Box bg='RGBA(0, 0, 0, 0.04)'>
+
       <Head>
         <title>{ title }</title>
         <meta name="description" content={ description } />
       </Head>
-      <Container>
-        <header>
-          <Box className="jumbotron">
-            <h1>8&nbsp;beat</h1>
-            <h2>バンドマン御用達のサポートメディア</h2>
-            <p>
-              We are Glowing up now
-              stage1: support Graphic & Web site
-              stage2: create indies community
-              stage3: Live Streaming Service
-            </p>
-          </Box>
-        </header>
-      </Container>
-    </div>
+
+      <header>
+        { parent ? (
+            <>
+              {/* ParentLayout */}
+              <ParentHeader />
+            </>
+          ) : (
+            <>
+              {/* ChildLayout */}
+              <ChildHeader />
+            </>
+          )
+        }
+      </header>
+
+      <main>
+        { children }
+      </main>
+
+      <Box
+        bg='RGBA(0, 0, 0, 0.64)'
+        color='white'
+        w='100%'
+        position="relative"
+        bottom='0'
+      >
+        <Container>
+          運営会社：エンターサイト<br />
+          〒650-0033 兵庫県神戸市中央区江戸町104
+        </Container>
+      </Box>
+
+    </Box>
   );
 }
 
