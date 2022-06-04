@@ -19,6 +19,7 @@ export default function Price() {
     { name: 'フルアルバムジャケットデザイン', discription: 'フルアルバム用のジャケットを制作致します。<br />ページ数や折り方など自由にお決めください。', price: 'ASK', delibary: '1w' },
     { name: 'タペストリー制作', discription: 'バンドロゴやイメージを全面にプリントした垂れ幕を制作します', price: 'ASK', delibary: '-' },
     { name: 'ノベルティグッズ制作', discription: 'キーホルダー・スマホケース・Tシャツなどを制作致します。', price: 'ASK', delibary: '-' },
+    { name: 'HP制作', discription: 'WEB最先端技術を使用したHPを制作致します。audioleafなどの既存SNS登録等もお任せ下さい。', price: 'ASK', delibary: '-' },
   ]
 
   return (

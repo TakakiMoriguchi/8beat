@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 
 const title = '8beat - バンドマン御用達のサポートメディア'
-const discription = 'バンド活動におけるロゴ・CDジャケット・グッズ・HPに至るまでトータルでサポート致します。'
+const description = 'バンド活動におけるロゴ・CDジャケット・グッズ・HPに至るまでトータルでサポート致します。'
 
 function Layout({ children, parent }) {
   return (
@@ -22,7 +22,7 @@ function Layout({ children, parent }) {
 
       <Head>
         <title>{ title }</title>
-        <meta name="discription" content={ discription } />
+        <meta name="description" content={ description } />
       </Head>
 
       <header>
