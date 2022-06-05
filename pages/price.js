@@ -1,6 +1,7 @@
 import Layout from '/layout/Layout.js'
 
 import {
+  Container,
   Table,
   Tbody,
   Tr,
@@ -24,26 +25,28 @@ export default function Price() {
 
   return (
     <Layout>
+      <Container>
 
-      <Table>
-        <Tbody>
+        <Table>
+          <Tbody>
 
-          { list.map((val, i) =>
-            <Tr key={i} >
-              <Td>
-                <Heading as='h4' size='sm'>{ val.name }</Heading>
-                <Text dangerouslySetInnerHTML={{ __html: val.discription }} />
-              </Td>
-              <Td>
-                <Text>{ '￥' + val.price }</Text>
-                <Text align='end'>{ val.delibary }</Text>
-              </Td>
-            </Tr>
-          )}
+            { list.map((val, i) =>
+              <Tr key={i} >
+                <Td>
+                  <Heading as='h4' size='sm'>{ val.name }</Heading>
+                  <Text dangerouslySetInnerHTML={{ __html: val.discription }} />
+                </Td>
+                <Td>
+                  <Text>{ '￥' + val.price }</Text>
+                  <Text align='end'>{ val.delibary }</Text>
+                </Td>
+              </Tr>
+            )}
 
-       </Tbody>
-      </Table>
+        </Tbody>
+        </Table>
 
+      </Container>
     </Layout>
   )
 }

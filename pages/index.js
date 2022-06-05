@@ -5,6 +5,7 @@ import NextLink from 'next/link'
 import SectionTitle from '/components/SectionTitle'
 import AboutBody from '/components/AboutBody'
 import PriceBody from '/components/PriceBody'
+import GallaryBody from '/components/GallaryBody'
 import OrderFlowBody from '/components/OrderFlowBody'
 import ReadMore from '/components/ReadMore'
 
@@ -28,11 +29,8 @@ export default function Home() {
       {/* Gallary */}
       <Container>
         <SectionTitle arg='GALLARY' />
-        <Image
-          src="/images/sample_logo.jpg"
-          width={150}
-          height={150}
-        />
+        <GallaryBody />
+        <ReadMore arg='gallary' />
       </Container>
 
       {/* Price */}
