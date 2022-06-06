@@ -1,4 +1,6 @@
 import Layout from '../layout/Layout.js'
+import { client } from '../libs/client'
+
 import Image from 'next/image'
 import NextLink from 'next/link'
 
@@ -16,7 +18,7 @@ import {
   ListItem,
 } from '@chakra-ui/react'
 
-export default function Home() {
+export default function Home({ gallaryData }) {
   return (
     <Layout parent>
 
@@ -29,7 +31,9 @@ export default function Home() {
       {/* Gallary */}
       <Container>
         <SectionTitle arg='GALLARY' />
-        <GallaryBody />
+      </Container>
+        <GallaryBody props={gallaryData} />
+      <Container>
         <ReadMore arg='gallary' />
       </Container>
 
@@ -58,4 +62,17 @@ export default function Home() {
 
     </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  const gallary = await client.get({
+    endpoint: 'gallary',
+    queries: { limit: 9 }
+  })
+
+  return {
+    props: {
+      gallaryData: gallary.contents
+    }
+  }
 }

@@ -1,31 +1,35 @@
-import { client } from '../libs/client'
-import { GetStaticProps } from 'next'
+import {
+  Box,
+  Stack,
+  Image,
+  Text
+} from '@chakra-ui/react'
 
-export const getStaticProps = async () => {
-  const data = await client.get({
-    endpoint: 'gallary',
-    queries: { limit: 9 }
-  })
+export default function GallaryBody({ props }) {
 
-  console.log(data)
-  return {
-    props: {
-      gallary: data.contents
-    }
-  }
-}
 
-export default function GallaryBody({ gallary }) {
-  console.log(process.env.API_KEY)
+
   return (
-    <div>
-      {/* <ul>
-        { gallary.map((val) => (
-          <li key={val.id}>
-            { val.title }
-          </li>
-        )) }
-      </ul> */}
-    </div>
+    <Box
+      display='flex'
+      overflow='hidden'
+      width='100%'
+    >
+
+      {props.map((val) => (
+        <Stack
+          mr='1rem'
+          key={ val.id }
+        >
+          <Image
+            src={ val.image.url }
+            width={200}
+            height={200}
+          />
+          <Text>{ val.title }</Text>
+        </Stack>
+      ))}
+
+    </Box>
   )
 }
