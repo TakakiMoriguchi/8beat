@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Stack,
@@ -5,30 +6,36 @@ import {
   Text
 } from '@chakra-ui/react'
 
+
 export default function GallaryBody({ props }) {
 
-
+  // clientWidth
+  const [ clientWidth, setClientWidth ] = useState()
+  const getWidth = () => {
+    setClientWidth = document.body.clientWidth * .8
+  }
+  useEffect(getWidth, [])
 
   return (
     <Box
-      display='flex'
       overflow='hidden'
-      width='100%'
+      width={ clientWidth }
     >
 
-      {props.map((val) => (
-        <Stack
-          mr='1rem'
-          key={ val.id }
-        >
-          <Image
-            src={ val.image.url }
-            width={200}
-            height={200}
-          />
-          <Text>{ val.title }</Text>
-        </Stack>
-      ))}
+      <Stack
+        direction='row'
+      >
+        {props.map((val) => (
+          <>
+            <Image
+              src={ val.image.url }
+              width='200px'
+              height='200px'
+            ></Image>
+            <Text>{ val.title }</Text>
+          </>
+        ))}
+      </Stack>
 
     </Box>
   )
