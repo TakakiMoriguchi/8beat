@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import {
   Box,
   Stack,
@@ -6,37 +7,45 @@ import {
   Text
 } from '@chakra-ui/react'
 
-
 export default function GallaryBody({ props }) {
-
-  // clientWidth
-  const [ clientWidth, setClientWidth ] = useState()
-  const getWidth = () => {
-    setClientWidth = document.body.clientWidth * .8
-  }
-  useEffect(getWidth, [])
-
   return (
-    <Box
-      overflow='hidden'
-      width={ clientWidth }
-    >
+    <Box>
 
-      <Stack
-        direction='row'
+      <Box
+        className='loop_wrap'
+        display="flex"
+        overflow="hidden"
+        width="100%"
       >
-        {props.map((val) => (
-          <>
-            <Image
-              src={ val.image.url }
-              width='200px'
-              height='200px'
-            ></Image>
-            <Text>{ val.title }</Text>
-          </>
-        ))}
-      </Stack>
+        <ul>
+          {props.map((val) => (
+            <li key={ val.id }>
+              <Image
+                src={ val.image.url }
+                width='200px'
+                height='200px'
+              />
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {props.map((val) => (
+            <li key={ val.id } >
+              <Image
+                src={ val.image.url }
+                width='200px'
+                height='200px'
+              />
+            </li>
+          ))}
+        </ul>
+      </Box>
 
     </Box>
   )
 }
+
+/* tips
+  css animation
+  https://chocolat5.com/tips/loop-image-animation/
+*/

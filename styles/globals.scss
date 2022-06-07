@@ -22,3 +22,57 @@ main{
 .order-flow{
   background: black;
 }
+
+/*
+  GALLARY LOOP IMAGE
+*/
+
+.loop_wrap {
+  display: flex;
+  width: 100vw;
+  height: 220px;
+  overflow: hidden;
+
+  ul{
+    display: flex;
+
+    li{
+      width: 220px;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+
+      img:first-child {
+        animation: loop 50s -25s linear infinite;
+      }
+
+      img:last-child {
+        animation: loop2 50s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes loop {
+  0% {
+    // transform: translateX(100%);
+    transform: translateX(500%);
+  }
+  to {
+    // transform: translateX(-100%);
+    transform: translateX(-500%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    // transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    // transform: translateX(-200%);
+    transform: translateX(-900%);
+  }
+}
