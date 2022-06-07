@@ -2,6 +2,7 @@ import "@fontsource/righteous"
 import NextLink from 'next/link'
 
 import {
+  Flex,
   Box,
   Container,
   Text
@@ -10,9 +11,14 @@ import {
 export default function ChildHeader() {
   return (
     <>
-      <Box bg='tomato' w='100%' p={2} color='white'>
-        <Container>
+      <Flex
+        bg='RGBA(0, 0, 0, .64)'
+        color='white'
+        w='100%'
+        p={2}
+      >
 
+        <Box>
           <NextLink href='/'>
             <Text
               fontFamily='"Righteous", cursive'
@@ -21,9 +27,11 @@ export default function ChildHeader() {
               8beat
             </Text>
           </NextLink>
+        </Box>
 
-        </Container>
-      </Box>
+        <Box>
+        </Box>
+      </Flex>
     </>
   )
 }

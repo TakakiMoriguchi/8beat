@@ -32,9 +32,11 @@ main{
   width: 100vw;
   height: 220px;
   overflow: hidden;
+  margin-bottom: 1rem;
 
   ul{
     display: flex;
+    list-style: none;
 
     li{
       width: 220px;

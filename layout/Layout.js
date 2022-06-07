@@ -45,7 +45,7 @@ function Layout({ children, parent }) {
       </main>
 
       <Box
-        bg='RGBA(0, 0, 0, 0.64)'
+        bg='RGBA(0, 0, 0, .64)'
         color='white'
         w='100%'
         position="relative"
