@@ -5,7 +5,8 @@ import {
   Flex,
   Box,
   Container,
-  Text
+  Text,
+  Spacer
 } from '@chakra-ui/react'
 
 export default function ChildHeader() {
@@ -18,19 +19,22 @@ export default function ChildHeader() {
         p={2}
       >
 
-        <Box>
-          <NextLink href='/'>
-            <Text
-              fontFamily='"Righteous", cursive'
-              fontSize={32}
-            >
-              8beat
-            </Text>
-          </NextLink>
-        </Box>
+        <Container maxW='container.lg'>
+          <Box>
+            <NextLink href='/'>
+              <Text
+                fontFamily='"Righteous", cursive'
+                fontSize={32}
+                _hover={{ color: '#76E4F7', cursor: 'pointer' }}
+              >
+                8beat
+              </Text>
+            </NextLink>
+          </Box>
 
-        <Box>
-        </Box>
+          <Box>
+          </Box>
+        </Container>
       </Flex>
     </>
   )
