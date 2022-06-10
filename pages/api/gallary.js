@@ -1,5 +1,5 @@
 import Layout from '/layout/Layout.js'
-import { client } from '../libs/client'
+import { client } from '../,../libs/client'
 import { Pagination } from '/components/Pagination'
 
 import {

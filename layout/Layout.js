@@ -48,7 +48,7 @@ function Layout({ children, parent }) {
         bg='RGBA(0, 0, 0, .64)'
         color='white'
         w='100%'
-        position="relative"
+        position="absolute"
         bottom='0'
       >
         <Container

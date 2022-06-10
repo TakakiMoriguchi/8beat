@@ -17,6 +17,10 @@ a {
 
 main{
   padding: 1rem;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 300px;
+  box-sizing: border-box;
 }
 
 .order-flow{

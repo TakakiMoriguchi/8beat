@@ -34,7 +34,7 @@ export default function Home({ gallaryData }) {
       </Container>
         <GallaryBody props={gallaryData} />
       <Container>
-        <ReadMore arg='gallary' />
+        <ReadMore arg='gallary/page/1' />
       </Container>
 
       {/* Price */}
