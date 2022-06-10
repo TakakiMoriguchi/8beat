@@ -18,16 +18,19 @@ export default function Gallary({ gallaryData }) {
       <Container>
 
         <Center>
+
           <Grid
             templateColumns='repeat(3, 1fr)'
             gap={6}
           >
             { gallaryData.map((val) => (
-              <GridItem key={ val.id } w={ val.image.width }>
+              <GridItem
+                key={ val.id }
+                maxWidth={ val.image.width }
+                maxHeight={ val.image.height }
+              >
                 <Image
                   src={ val.image.url }
-                  width={ val.image.width }
-                  height={ val.image.height }
                 />
                 <Text>{ val.title }</Text>
               </GridItem>

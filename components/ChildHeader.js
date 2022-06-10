@@ -5,8 +5,7 @@ import {
   Flex,
   Box,
   Container,
-  Text,
-  Spacer
+  Text
 } from '@chakra-ui/react'
 
 export default function ChildHeader() {
@@ -33,8 +32,10 @@ export default function ChildHeader() {
           </Box>
 
           <Box>
+            {/* menuArea */}
           </Box>
         </Container>
+
       </Flex>
     </>
   )
