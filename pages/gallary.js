@@ -1,10 +1,9 @@
 import Layout from '/layout/Layout.js'
 import { client } from '../libs/client'
+import { Pagination } from '/components/Pagination'
 
 import {
   Container,
-  Box,
-  Stack,
   Center,
   Grid,
   GridItem,
@@ -12,7 +11,7 @@ import {
   Text
 } from '@chakra-ui/react'
 
-export default function Gallary({ gallaryData }) {
+export default function Gallary({ gallaryData, totalCount }) {
   return (
     <Layout>
       <Container>
@@ -39,6 +38,8 @@ export default function Gallary({ gallaryData }) {
 
         </Center>
 
+        <Pagination totalCount={totalCount} />
+
       </Container>
     </Layout>
   )
@@ -47,12 +48,13 @@ export default function Gallary({ gallaryData }) {
 export const getStaticProps = async () => {
   const gallary = await client.get({
     endpoint: 'gallary',
-    queries: { limit: 9 }
+    queries: { offset: 0, limit: 9 }
   })
 
   return {
     props: {
-      gallaryData: gallary.contents
+      gallaryData: gallary.contents,
+      totalCount: gallary.totalCount
     }
   }
 }
